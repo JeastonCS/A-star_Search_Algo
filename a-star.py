@@ -122,7 +122,9 @@ def aStarSearch(grid, source, dest):
 
         # get successor nodes (8 possible-if unobstructed)
         # possible locations are N, NE, E, SE, S, SW, W, NW
-        possible_locations = [(curr_x,curr_y-1), (curr_x+1,curr_y-1), (curr_x+1,curr_y), (curr_x+1,curr_y+1), (curr_x,curr_y+1), (curr_x-1,curr_y+1), (curr_x-1,curr_y), (curr_x-1,curr_y-1)]
+        possible_locations = [(curr_x,curr_y-1), (curr_x+1,curr_y-1), (curr_x+1,curr_y),
+                            (curr_x+1,curr_y+1), (curr_x,curr_y+1), (curr_x-1,curr_y+1),
+                            (curr_x-1,curr_y), (curr_x-1,curr_y-1)]
         
         # add valid successors to open list and check if destination has been reached
         for successor_loc in possible_locations:
@@ -159,7 +161,7 @@ def aStarSearch(grid, source, dest):
     
     # algorithm was unable to find destination from the current source
     if found_dest == False:
-        print("Failed to find the destination")
+        print("Failed to find the destination!")
         return None
 
 # utility function that generates a grid of 1's and 0's
